@@ -1,4 +1,4 @@
-### Формат входных данных
+## Формат входных данных
 roads.csv - файл с данными о дорогах. Содержит следующие поля:
 * id - уникальный идентификатор дороги
 * src - идентификатор начальной точки
@@ -83,9 +83,29 @@ TimeDict = {
 }
 ```
 
+## Как запускать
+1. Скачать репозиторий:
+```bash
+git clone https://github.com/anxieuse/aviahack-22
+```
+2. Установить зависимости:
+```bash
+pip install -r requirements.txt
+```
+3. Запустить solve.py на одном из тестов:
+```bash
+python3 ./task/scripts/solve.py --i ./task/tests/sample-formatted -o ./task/tests/sample-formatted
+```
+4. Посмотреть результаты в папке ./task/tests/sample-formatted/solution_.
+5. Сгенерировать код для бэкенда:
+```bash
+python3 ./task/scripts/code-gen.py --i ./task/tests/sample-formatted/solution_ -o ./task/tests/sample-formatted/solution_
+```
+
 ## TO-DO
 * Реализовать поддержку следующих запросов:
   * Добавить/удалить автобус/рейс
   * Переназначить автобус для рейса
   * Изменить время вылета/прилета рейса
   * Изменить время исполнения задачи
+* Написать генератор тестов

@@ -1,0 +1,9 @@
+scipy
+numpy
+pandas
+networkx
+matplotlib
+argparse
+tqdm
+logging
+configparser
