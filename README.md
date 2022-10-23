@@ -105,10 +105,11 @@ python3 ./task/scripts/code-gen.py --i ./task/tests/sample-formatted/solution_ -
 7. Запустить docker-compose:
 
 ```bash
-sudo docker-compose up --build
+cd backend && sudo docker-compose up --build
 ```
 
 ## TO-DO
+* Склеить генерацию первичного расписания либо в отдельную библиотеку, либо перенести алгоритм в основной модуль
 * Реализовать поддержку следующих запросов:
   * Добавить/удалить автобус/рейс
   * Переназначить автобус для рейса
