@@ -2,7 +2,7 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 from flask import Response
-
+from code import timeDict
 app = Flask(__name__)
 buses = {
     5: {
@@ -64,6 +64,8 @@ exampleTimeDict = {
 def createRoute(elem):
     return {'startTime': -1,
             'stopTime': -1,
+            'startPoint': elem['src'],
+            'stopPoint': elem['trg'],
             'buses': elem['buses'],
             'passengerCount': elem['passengers'],
             'routeId': elem['routeId']
@@ -75,11 +77,11 @@ def transformAlgorithmData(timeDict):
     for key, arr in timeDict.items():
         for elem in arr:
             if elem['isStart'] is True:
-                routes[elem['routeId']] = createRoute(elem)
-                routes[elem['routeId']]['startTime'] = key
+                routes[elem['id']] = createRoute(elem)
+                routes[elem['id']]['startTime'] = key
             else:
-                routes[elem['routeId']]['stopTime'] = key
-                routes[elem['routeId']]['id'] = key
+                routes[elem['id']]['stopTime'] = key
+                routes[elem['id']]['id'] = key
     return routes
 
 
@@ -91,7 +93,7 @@ def transformSchedule(routes, startMinute=0):
     return res
 
 
-schedule = transformAlgorithmData(exampleTimeDict)
+schedule = transformAlgorithmData(timeDict)
 
 
 def parseBaseArgs(request):
