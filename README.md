@@ -90,7 +90,7 @@ git clone https://github.com/anxieuse/aviahack-22
 ```
 2. Установить зависимости:
 ```bash
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 3. Запустить solve.py на одном из тестов:
 ```bash
@@ -100,6 +100,12 @@ python3 ./task/scripts/solve.py --i ./task/tests/sample-formatted -o ./task/test
 5. Сгенерировать код для бэкенда:
 ```bash
 python3 ./task/scripts/code-gen.py --i ./task/tests/sample-formatted/solution_ -o ./task/tests/sample-formatted/solution_
+```
+6. Скопировать сгенерированный код для бэкенда в файл `code.py` и переместить его в папку backend
+7. Запустить docker-compose:
+
+```bash
+sudo docker-compose up --build
 ```
 
 ## TO-DO

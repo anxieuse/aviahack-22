@@ -4,61 +4,6 @@ from flask import jsonify
 from flask import Response
 from code import timeDict
 app = Flask(__name__)
-buses = {
-    5: {
-        'capacity': 100,
-        'driver': "Ivan Shumilov"
-    },
-    6: {
-        'capacity': 50,
-        'driver': "Nikita Zvezda"
-    },
-    10: {
-        'capacity': 50,
-        'driver': "Ivan Ivanov"
-    },
-    15: {
-        'capacity': 50,
-        'driver': "Nikolai Ushakov"
-    },
-    20: {
-        'capacity': 50,
-        'driver': "Alexander Kireev"
-    }
-}
-start1 = {'isStart': True,
-          'routeId': 100,
-          'buses': [5, 6, 10],
-          'startPoint': 100,
-          'stopPoint': 150,
-          'passengers': 200
-          }
-stop1 = {'isStart': False,
-         'routeId': 100,
-         'buses': [5, 6, 10],
-         'startPoint': 100,
-         'stopPoint': 150,
-         'passengers': 200
-         }
-start2 = {'isStart': True,
-          'routeId': 150,
-          'buses': [15, 20],
-          'startPoint': 200,
-          'stopPoint': 250,
-          'passengers': 100
-          }
-stop2 = {'isStart': False,
-         'routeId': 150,
-         'buses': [15, 20],
-         'startPoint': 200,
-         'stopPoint': 250,
-         'passengers': 100
-         }
-exampleTimeDict = {
-    45: [start1],
-    70: [stop1, start2],
-    120: [stop2]
-}
 
 
 def createRoute(elem):
@@ -68,7 +13,7 @@ def createRoute(elem):
             'stopPoint': elem['trg'],
             'buses': elem['buses'],
             'passengerCount': elem['passengers'],
-            'routeId': elem['routeId']
+            'routeId': elem['id']
             }
 
 
