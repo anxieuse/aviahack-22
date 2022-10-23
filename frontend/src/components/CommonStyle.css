@@ -1,0 +1,54 @@
+@import '~antd/dist/antd.css';
+
+.MainPage {
+    background-color: #ffffff;
+    /*min-width: 100vw;*/
+    /*min-height: 100vh;*/
+    display: flex;
+}
+
+.Statistic {
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.Render {
+    margin-left: 1vw;
+    background-color: #ffffff;
+    min-height: 12vh;
+}
+
+.Header {
+    background-color: #ffffff;
+    min-height: 5vh;
+    display: flex;
+    width: 100%;
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*font-size: calc(10px + 2vmin);*/
+    /*color: white;*/
+}
+
+.Task {
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    background-color: #C1C1C1;
+    /*margin-left: 1vw;*/
+    /*min-height: 12vh;*/
+
+}
+
+.Navigation {
+    height: 10px;
+    width: 10px;
+}
