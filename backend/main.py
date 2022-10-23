@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 from flask import Response
+from waitress import serve
 from code import timeDict
 app = Flask(__name__)
 
@@ -38,7 +39,7 @@ def transformSchedule(routes, startMinute=0):
     return res
 
 
-schedule = transformAlgorithmData(timeDict)
+schedule = {}
 
 
 def parseBaseArgs(request):
@@ -137,5 +138,5 @@ def getCurrentSchedule():
 
 
 if __name__ == "__main__":
-    from waitress import serve
+    schedule = transformAlgorithmData(timeDict)
     serve(app, host="0.0.0.0", port=5000)
